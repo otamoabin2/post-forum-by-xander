@@ -111,14 +111,20 @@ USE_TZ = True
 
 os.makedirs(STATIC_TMP, exist_ok=True)
 os.makedirs(STATIC_ROOT, exist_ok=True)
+
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_TMP = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
-    '‎⁨/iCloud Drive⁩/ Desktop⁩/ C_P⁩/ Assessments⁩/ assessment-4⁩/ craigs_list_jr⁩/ craigs_list_jr⁩/ static',
+    os.path.join(PROJECT_ROOT, 'static'),
 )
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+# STATICFILES_DIRS = (
+#     '‎⁨/iCloud Drive⁩/ Desktop⁩/ C_P⁩/ Assessments⁩/ assessment-4⁩/ craigs_list_jr⁩/ craigs_list_jr⁩/ static',
+# )
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
