@@ -1,5 +1,5 @@
 
-
+import dj_database_url
 import django_heroku
 import os
 
@@ -16,7 +16,7 @@ SECRET_KEY = '-6l8nucuo^50b!!7cdmd-4y$%5sd43%e1z=rzmcl98%t#3_q*h'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['herokudjangoapp.herokuapp.com']
 
 
 # Application definition
@@ -123,6 +123,7 @@ STATICFILES_DIRS = (
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-
+prod_db = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(prod_db)
 # Configure Django App for Heroku.
 django_heroku.settings(locals())
