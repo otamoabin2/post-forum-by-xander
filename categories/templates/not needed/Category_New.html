@@ -1,0 +1,28 @@
+{% extends './categories/base.html' %}
+
+
+# Create a new record using the model's constructor.
+record = MyModelName(my_field_name="Instance #1")
+
+# Save the object into the database.
+record.save()
+
+
+{% block content %}
+
+<p></p>
+<br>
+<h4> New Category</h4>
+
+<form>
+<input type="text" placeholder="Type a New Category">
+<input type="submit" value="submit">
+</form>
+
+
+
+
+
+
+{% endblock %} 
+

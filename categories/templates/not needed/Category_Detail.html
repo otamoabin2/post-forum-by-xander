@@ -1,0 +1,31 @@
+
+{% extends './categories/base.html' %}
+
+
+{% block content %}
+
+  <br>
+  <h2> Category: <span class="category-name">{{ cat }}</span></h2>
+  <br>
+
+
+<a href="http://127.0.0.1:8000/categories/{{cat.id}}/posts"><h4 class="underline">All posts from this category</h4></a>
+  <br> 
+
+<ul> 
+  {% for post in posts %}
+  <p>{{post.title}}</p>
+  {% endfor %}
+</ul> 
+  <br>
+  <br>
+  <a href="{% url 'category_edit' pk=cat.id %}"  class="btn btn-primary ">Edit Category</a>
+  <br>
+  <a href="{% url 'category_delete' pk=cat.id %}"  class="btn btn-danger ">Delete Category</a>
+  {% comment %} <h2>The id of this category is:  </h2> {% endcomment %}
+    {% comment %} {{ student.l_name }}
+    {{ student.student_number }}
+    {{ student.dob }} {% endcomment %}
+
+{% endblock %} 
+

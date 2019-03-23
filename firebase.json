@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "categories/templates/categories",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

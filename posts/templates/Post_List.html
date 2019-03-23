@@ -1,0 +1,46 @@
+
+
+{% extends './posts/base.html' %}
+
+
+
+
+
+{% block content %}
+<br>
+
+<h2 class="large-text"> Category: <span style="text-decoration: none">{{ category }}</span></h2>
+
+
+
+<h2 style="font-size:175%" class="underline large-text">Post List</h2>
+
+
+  {% for post in posts %}
+
+    <div class="post-squib">
+    <br>
+        <div class="large-text"><a href="{% url 'index' %}{{category.id}}/posts/{{post.id}}" category=category.id><span class="post-icon">🏤</span> {{ post.title }}</a></div>
+        {% comment %} <p>published: {{ post.published_date }}</p> {% endcomment %}
+        <hr class="hr">
+        <p><span class="underline">Post #</span>: {{post.id}}</p>
+        <p><span class="underline">by</span>: {{post.author}}</p>
+        {% comment %} <p>{{ post.text|linebreaksbr }}</p> {% endcomment %}
+    </div>
+
+
+  {% endfor %}
+
+  <br>
+    <a href="{% url 'category_edit' pk=category.pk %}"  class="btn btn-primary buttons">Edit Category</a>
+  <br>
+  <a href="{% url 'category_delete' pk=category.pk%}"  class="btn btn-danger buttons">Delete Category</a>
+ <br>
+{% comment %} <h1>{{post.pk}}</h1> {% endcomment %}
+    <a href="{% url 'new_post' pk=category.pk %}"  class="btn btn-success buttons">New Post</a>
+    <br>
+    <br>
+
+{% endblock %}
+
+{% comment %} {% url 'category_edit' pk=cat.id %} {% endcomment %}

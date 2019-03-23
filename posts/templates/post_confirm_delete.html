@@ -1,0 +1,23 @@
+{% extends './posts/base.html' %}
+
+
+# Create a new record using the model's constructor.
+record = MyModelName(my_field_name="Instance #1")
+
+# Save the object into the database.
+record.save()
+
+
+{% block content %}
+
+
+<form method="post">{% csrf_token %}
+<br>
+    <h3 class='large-text' style="font-size: 145%">Are you sure you want to delete "{{ object }}" ?</h3>
+    <input class="buttons" type="submit" value="Submit" />
+</form>
+
+
+
+{% endblock %} 
+

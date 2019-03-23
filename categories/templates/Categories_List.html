@@ -1,0 +1,27 @@
+
+
+{% extends './categories/base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+            <br>
+ 
+            <p class="large-text">Categories <a href="{% url 'category_new' %}"><span><img src="../static/plus.png" class="plus"> </span></a></p>
+            <hr class="hr">
+            <br>
+            <br>
+{% for category in category_data %} 
+  {{ "     " }}  <div class="anchor-top"><a  href={{category.id}}>{{ category.title }}</a></div>  {{ "     " }}
+
+<br>
+<br>
+
+{% endfor %}
+<br>
+<img class="main-icon" src="../static/pc.png">
+<br>
+
+
+{% endblock %} 
