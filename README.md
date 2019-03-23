@@ -1,8 +1,6 @@
 # post-forum-by-xander
 Full-stack Django - CRUD app for posting
 
-Fullstack Django
-
 Routes/Actions
 
     /categories: A list of all the categories
